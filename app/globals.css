@@ -8,8 +8,32 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-prompt), sans-serif;
+  --font-serif: var(--font-dm-serif), serif;
+
+  /* ABC maroon */
+  --color-maroon-50: #fceef2;
+  --color-maroon-100: #f8d9e3;
+  --color-maroon-200: #f0b3c6;
+  --color-maroon-300: #e17b9d;
+  --color-maroon-400: #c94170;
+  --color-maroon-500: #98002e;
+  --color-maroon-600: #800027;
+  --color-maroon-700: #680020;
+  --color-maroon-800: #500019;
+  --color-maroon-900: #380012;
+
+  /* ABC gold */
+  --color-gold-50: #fff8e5;
+  --color-gold-100: #fcecc1;
+  --color-gold-200: #f5d987;
+  --color-gold-300: #e8c04e;
+  --color-gold-400: #d9aa24;
+  --color-gold-500: #c9950c;
+  --color-gold-600: #a87908;
+  --color-gold-700: #855e06;
+  --color-gold-800: #634505;
+  --color-gold-900: #422e03;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -22,5 +46,51 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-wrap: balance;
+}
+
+p {
+  text-wrap: pretty;
+}
+
+/** LOGO CSS **/
+.curtain-2 {
+  stroke: #98002e;
+  stroke-width: 12;
+  stroke-linecap: round;
+}
+.bar {
+  stroke: #c9950c;
+  stroke-width: 4;
+  stroke-linecap: round;
+}
+
+.text-2 {
+  fill: #414042;
+  /* fill: #222; */
+  font-family: var(--font-prompt), Helvetica, sans-serif;
+  text-anchor: middle;
+  dominant-baseline: middle;
+  line-height: 1;
+}
+
+.text-m {
+  /* fill: #98002e; */
+  fill: #000;
+}
+
+.curtain-left {
+  transform: translateX(12px);
+}
+.curtain-right {
+  transform: translateX(-15px);
 }
