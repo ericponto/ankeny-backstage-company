@@ -17,7 +17,6 @@ const opportunities = [
   {
     icon: HammerIcon,
     category: "BEFORE & AFTER THE SHOW",
-    title: "Help build the world on stage.",
     name: "Set build & strike",
     description:
       "Help construct the set before the show and take it down after.",
@@ -26,7 +25,6 @@ const opportunities = [
   {
     icon: TicketIcon,
     category: "DURING PERFORMANCES",
-    title: "Help the show run smoothly.",
     name: "Front of house",
     description: "Help welcome the audience and make show nights run smoothly.",
     examples: ["Take tickets and welcome guests", "Sell concessions"],
@@ -36,7 +34,6 @@ const opportunities = [
 function OpportunitySection({
   icon: Icon,
   category,
-  title,
   name,
   description,
   examples,
@@ -64,7 +61,7 @@ function OpportunitySection({
           {examples.map((example) => (
             <li key={example} className="flex gap-3 text-sm text-stone-700">
               <span aria-hidden="true" className="text-gold-600">
-                ✳
+                —
               </span>
               {example}
             </li>
@@ -104,10 +101,32 @@ export default function VolunteerPage() {
           ))}
         </div>
       </section>
-      <section className="bg-sand-100 px-5 sm:px-8 py-10 sm:py-14">
+      <section className="bg-sand-100 px-5 py-12 sm:px-8 sm:py-16">
         <div className="mx-auto max-w-7xl">
-          <div className="grid gap-6 md:grid-cols-[1fr_2fr] md:gap-16">
-            <div>
+          <div className="grid items-center gap-8 md:grid-cols-[1.1fr_1.4fr] md:gap-10 lg:gap-16">
+            <div className="relative order-2 md:order-1">
+              <div className="grid grid-cols-2 gap-4">
+                <img
+                  src="/all-state.jpg"
+                  alt="Student receiving an award at the All-State competition"
+                  className="relative h-70 w-full rounded-[1.75rem] object-cover shadow-lg sm:h-75 lg:h-95"
+                />
+                <div className="flex flex-col gap-4 pt-8">
+                  <img
+                    src="/speech-backstage.jpg"
+                    alt="Students getting ready for a performance"
+                    className="h-42.5 w-full rounded-3xl object-cover shadow-md lg:h-47.5"
+                  />
+                  <img
+                    src="/speech-preview.jpg"
+                    alt="Students posing for a photo at the preview night"
+                    className="h-42.5 w-full rounded-3xl object-cover shadow-md"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <div className="order-1 md:order-2">
               <p className="text-xs font-extrabold uppercase tracking-[0.18em] text-gold-700">
                 Special event
               </p>
@@ -117,10 +136,7 @@ export default function VolunteerPage() {
               <p className="mt-3 font-semibold text-maroon-800">
                 Saturday, January 23, 2027
               </p>
-            </div>
-
-            <div>
-              <p className="text-lg font-semibold leading-7">
+              <p className="mt-5 text-lg font-semibold leading-7 text-stone-800">
                 We&apos;re hosting the district contest this year
               </p>
               <p className="mt-4 leading-7 text-stone-600">
@@ -135,14 +151,14 @@ export default function VolunteerPage() {
 
       <section className="bg-maroon-700 px-5 py-12 text-ivory-100 sm:px-8 sm:py-16">
         <div className="mx-auto max-w-7xl">
-          <h2 className="mt-3 font-serif text-3xl leading-snug sm:text-4xl ">
+          <h2 className="font-serif text-3xl leading-snug sm:text-4xl ">
             Ready to volunteer?
           </h2>
           <p className="mt-4 max-w-3xl text-lg leading-8 text-stone-200">
             First, let us know you&apos;re interested in helping out by sending
             us an email. Second, to volunteer in any Ankeny Community School
-            District program you’ll need to be regsistered through the school
-            district.
+            District program you&apos;ll need to be registered through the
+            school district.
           </p>
 
           <div className="mt-8 grid gap-6 md:grid-cols-2">
@@ -163,7 +179,8 @@ export default function VolunteerPage() {
               <h3 className="text-xl font-semibold text-white">Register</h3>
               <p className="flex-1 mt-4 leading-7 text-stone-200">
                 Complete the registration process through the Ankeny Community
-                School District's Volunteer Portal to be eligible to volunteer.
+                School District&apos;s Volunteer Portal to be eligible to
+                volunteer.
               </p>
               <a
                 href="https://app.betterimpact.com/PublicEnterprise/48bb9455-72f6-4445-a4bd-db232e49183e"

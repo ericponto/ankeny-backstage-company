@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 const photos = {
   hero: "/cmiyc-hero.jpg",
   production: "/green-room.jpg",
@@ -183,6 +185,12 @@ export default function Home() {
                 meals during tech week, there is a long list of ways to get
                 involved.
               </p>
+              <Link
+                href="/volunteer"
+                className="mt-6 inline-flex items-center gap-2 font-bold text-maroon-500 hover:underline  underline-offset-8 transition hover:text-maroon-700"
+              >
+                Learn more about volunteering
+              </Link>
             </div>
           </div>
         </div>
