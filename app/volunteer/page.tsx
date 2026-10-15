@@ -86,7 +86,7 @@ export default function VolunteerPage() {
         className="bg-ivory-100 px-5 py-4 sm:px-8 sm:py-8"
       >
         <div className="mx-auto max-w-7xl">
-          <h2 className="mb-5 text-4xl font-bold text-maroon-700 font-serif">
+          <h2 className="mb-5 text-4xl font-bold text-maroon-600 font-serif">
             Opportunities
           </h2>
           <p className="text-lg mb-8 max-w-3xl">

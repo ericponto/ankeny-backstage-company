@@ -1,4 +1,10 @@
 import Link from "next/link";
+import {
+  FacebookLogoIcon,
+  InstagramLogoIcon,
+  MaskHappyIcon,
+  MaskSadIcon,
+} from "@phosphor-icons/react/ssr";
 
 const photos = {
   hero: "/cmiyc-hero.jpg",
@@ -105,9 +111,14 @@ export default function Home() {
             </h2>
           </div>
 
-          <div className="mt-14 grid gap-6 md:grid-cols-2">
-            <article className="group rounded-3xl border border-[#e4d6c3] bg-ivory-50 p-7 shadow-sm sm:p-8">
-              <h3 className="text-2xl font-bold font-serif ">Speech</h3>
+          <div className="mt-14 grid gap-10 sm:gap-6 md:grid-cols-2">
+            <article className="group relative rounded-3xl border border-[#e4d6c3] bg-ivory-50 p-7 shadow-sm sm:p-8">
+              <div className="absolute -top-7 left-7 flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-gold-200 text-gold-800 shadow-md">
+                <MaskSadIcon size={30} weight="fill" aria-hidden="true" />
+              </div>
+              <div className="pt-2">
+                <h3 className="text-2xl font-bold font-serif ">Speech</h3>
+              </div>
               <p className="mt-4 leading-7 text-[#65594f]">
                 AHS Speech gives students a place to showcase their talents,
                 grow their public speaking skills, create art, and tell stories.
@@ -115,15 +126,52 @@ export default function Home() {
                 student has a chance to find their voice in Large Group and
                 Individual competitions.
               </p>
-              <a
-                className="mt-6 inline-flex items-center gap-2 font-bold text-maroon-500 underline decoration-gold-500 decoration-2 underline-offset-8 transition hover:text-maroon-700"
-                href="https://sites.google.com/ankenyschools.org/ahs-speech/home"
-              >
-                Learn more
-              </a>
+              <div className="mt-6 flex items-center justify-between gap-3">
+                <a
+                  className="inline-flex items-center gap-2 font-bold text-maroon-500 hover:underline underline-offset-8 transition hover:text-maroon-700"
+                  href="https://sites.google.com/ankenyschools.org/ahs-speech/home"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Learn more
+                </a>
+                <div className="ml-auto flex items-center gap-3">
+                  <a
+                    className="inline-flex items-center gap-2 rounded-full p-2 text-sm font-semibold text-maroon-500 transition hover:border-maroon-700 hover:text-maroon-800"
+                    href="https://www.facebook.com/profile.php?id=61574074319966"
+                    target="_blank"
+                    rel="noreferrer"
+                    aria-label="Facebook for Ankeny Speech"
+                  >
+                    <FacebookLogoIcon
+                      size={22}
+                      weight="bold"
+                      aria-hidden="true"
+                    />
+                  </a>
+                  <a
+                    className="inline-flex items-center gap-2 rounded-full p-2 text-sm font-semibold text-maroon-500 transition hover:border-maroon-700 hover:text-maroon-800"
+                    href="https://www.instagram.com/ankenyspeech"
+                    target="_blank"
+                    rel="noreferrer"
+                    aria-label="Instagram for Ankeny Speech"
+                  >
+                    <InstagramLogoIcon
+                      size={22}
+                      weight="bold"
+                      aria-hidden="true"
+                    />
+                  </a>
+                </div>
+              </div>
             </article>
-            <article className="group rounded-3xl border border-[#e4d6c3] bg-ivory-50 p-7 shadow-sm sm:p-8">
-              <h3 className="text-2xl font-bold font-serif ">Drama</h3>
+            <article className="group relative rounded-3xl border border-[#e4d6c3] bg-ivory-50 p-7 shadow-sm sm:p-8">
+              <div className="absolute -top-7 left-7 flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-maroon-100 text-maroon-600 shadow-md">
+                <MaskHappyIcon size={30} weight="fill" aria-hidden="true" />
+              </div>
+              <div className="pt-2">
+                <h3 className="text-2xl font-bold font-serif ">Drama</h3>
+              </div>
               <p className="mt-4 leading-7 text-[#65594f]">
                 AHS Drama brings students together to tell stories, build
                 skills, and create unforgettable experiences through the fall
@@ -131,12 +179,31 @@ export default function Home() {
                 students have opportunities to explore their creativity, work as
                 a team, and bring stories to life.
               </p>
-              <a
-                className="mt-6 inline-flex items-center gap-2 font-bold text-maroon-500 underline decoration-gold-500 decoration-2 underline-offset-8 transition hover:text-maroon-700"
-                href="https://ankenydrama.ludus.com/"
-              >
-                Find tickets
-              </a>
+              <div className="mt-6 flex items-center justify-between gap-3">
+                <a
+                  className="inline-flex items-center gap-2 font-bold text-maroon-500 hover:underline underline-offset-8 transition hover:text-maroon-700"
+                  href="https://ankenydrama.ludus.com/"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Find tickets
+                </a>
+                <div className="ml-auto flex items-center gap-3">
+                  <a
+                    className="inline-flex items-center gap-2 rounded-full p-2 text-sm font-semibold text-maroon-500 transition hover:border-maroon-700 hover:text-maroon-800"
+                    href="https://www.instagram.com/ankenyhsdrama/"
+                    target="_blank"
+                    rel="noreferrer"
+                    aria-label="Instagram for Ankeny Drama"
+                  >
+                    <InstagramLogoIcon
+                      size={22}
+                      weight="bold"
+                      aria-hidden="true"
+                    />
+                  </a>
+                </div>
+              </div>
             </article>
           </div>
         </div>
