@@ -3,6 +3,9 @@ import "./globals.css";
 
 import { Prompt, DM_Serif_Display } from "next/font/google";
 
+import Footer from "./_components/footer";
+import Header from "./_components/header";
+
 const prompt = Prompt({
   subsets: ["latin"],
   variable: "--font-prompt",
@@ -27,7 +30,11 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       lang="en"
       className={`${prompt.variable} ${dmSerif.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col font-sans">{children}</body>
+      <body className="flex min-h-screen flex-col font-sans">
+        <Header />
+        <div className="flex-1">{children}</div>
+        <Footer />
+      </body>
     </html>
   );
 }

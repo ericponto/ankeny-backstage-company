@@ -1,7 +1,3 @@
-import Logo from "./logo";
-import CurrentYear from "../components/current-year";
-import { Suspense } from "react";
-
 const photos = {
   hero: "/cmiyc-hero.jpg",
   production: "/green-room.jpg",
@@ -11,25 +7,7 @@ const photos = {
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-[#fbf8f1] text-[#302822]">
-      {/* Header */}
-      <header className="relative z-10 border-b border-[#e9dfd0] bg-[#fbf8f1]">
-        <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-5 py-4 sm:px-8">
-          <a href="/" className="flex items-center gap-3">
-            <div>
-              <Logo />
-            </div>
-          </a>
-
-          <a
-            href="https://givebutter.com/ABC-donations-lmg6wc"
-            className="rounded-full bg-maroon-500 px-6 py-2 text-sm font-bold text-white transition hover:bg-maroon-700 focus:outline-none focus:ring-2 focus:ring-gold-500 focus:ring-offset-2"
-          >
-            Donate
-          </a>
-        </div>
-      </header>
-
+    <main className="min-h-screen bg-ivory-50 text-[#302822]">
       {/* Hero */}
       <section
         id="home"
@@ -109,7 +87,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="bg-[#f0e9dc] px-5 py-20 sm:px-8 sm:py-24 relative ">
+      <section className="bg-sand-100 px-5 py-20 sm:px-8 sm:py-24 relative ">
         <div className="blur-xs inset-0 absolute">
           <div className="hidden md:block inset-0 absolute bg-gold-400/8 [clip-path:polygon(23%_0%,27%_0%,60%_100%,-10%_100%)]"></div>
           <div className="hidden md:block inset-0 absolute bg-gold-400/8 [clip-path:polygon(73%_0%,77%_0%,110%_100%,40%_100%)]"></div>
@@ -126,7 +104,7 @@ export default function Home() {
           </div>
 
           <div className="mt-14 grid gap-6 md:grid-cols-2">
-            <article className="group rounded-3xl border border-[#e4d6c3] bg-[#fbf8f1] p-7 shadow-sm sm:p-8">
+            <article className="group rounded-3xl border border-[#e4d6c3] bg-ivory-50 p-7 shadow-sm sm:p-8">
               <h3 className="text-2xl font-bold font-serif ">Speech</h3>
               <p className="mt-4 leading-7 text-[#65594f]">
                 AHS Speech gives students a place to showcase their talents,
@@ -142,7 +120,7 @@ export default function Home() {
                 Learn more
               </a>
             </article>
-            <article className="group rounded-3xl border border-[#e4d6c3] bg-[#fbf8f1] p-7 shadow-sm sm:p-8">
+            <article className="group rounded-3xl border border-[#e4d6c3] bg-ivory-50 p-7 shadow-sm sm:p-8">
               <h3 className="text-2xl font-bold font-serif ">Drama</h3>
               <p className="mt-4 leading-7 text-[#65594f]">
                 AHS Drama brings students together to tell stories, build
@@ -234,20 +212,6 @@ export default function Home() {
           </a>
         </div>
       </section>
-
-      {/* Footer */}
-      <footer className="bg-gray-950 px-5 py-8 text-white/75 sm:px-8">
-        <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-4 text-center sm:flex-row sm:text-left">
-          <div></div>
-          <p className="text-sm">
-            ©{" "}
-            <Suspense fallback="">
-              <CurrentYear />
-            </Suspense>{" "}
-            Ankeny Backstage Company
-          </p>
-        </div>
-      </footer>
     </main>
   );
 }

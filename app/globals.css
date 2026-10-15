@@ -34,6 +34,11 @@
   --color-gold-700: #855e06;
   --color-gold-800: #634505;
   --color-gold-900: #422e03;
+
+  /* ABC neutral backgrounds */
+  --color-ivory-50: #fbf8f1;
+  --color-ivory-100: #faf8f2;
+  --color-sand-100: #f0e9dc;
 }
 
 @media (prefers-color-scheme: dark) {
