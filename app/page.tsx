@@ -22,21 +22,30 @@ export default function Home() {
       {/* Hero */}
       <section
         id="home"
-        className="relative isolate min-h-[540px] overflow-hidden sm:min-h-[650px] bg-black"
+        className="relative isolate  overflow-hidden  bg-black"
       >
-        <Image
-          src={photos.hero}
-          alt="A theater stage ready for a performance"
-          fill
-          className="absolute inset-0 -z-20 w-full object-cover !top-[-12vw]"
-        />
+        <div className="absolute inset-0 -z-20 overflow-hidden">
+          <div
+            className="absolute left-1/2 top-0 -translate-x-1/2"
+            style={{ width: "min(100vw, 1440px)", height: "100%" }}
+          >
+            <Image
+              src={photos.hero}
+              alt="A theater stage ready for a performance"
+              width={2048}
+              height={1024}
+              priority
+              className="w-full object-cover"
+            />
+          </div>
+        </div>
         <div className="absolute inset-0 -z-10 bg-gradient-to-r from-black-900/90 via-black-800/75 to-black-800/20" />
 
-        <div className="mx-auto flex min-h-[540px] max-w-7xl items-center px-5 py-20 sm:min-h-[650px] sm:px-8">
+        <div className="mx-auto flex  max-w-7xl items-center px-5 pt-0 pb-20 sm:px-8">
           <div className="text-center mx-auto">
-            <h1 className="mt-[20vw] font-serif text-5xl leading-[1.05] tracking-tight text-white sm:text-6xl lg:text-7xl">
+            <h1 className="mt-[clamp(100px,27vw,400px)] font-serif text-5xl leading-[1.05] tracking-tight text-white sm:text-6xl lg:text-7xl">
               Great shows
-              <br />
+              <br aria-hidden="true" />
               take a <span className="text-gold-300">team</span>
             </h1>
 
