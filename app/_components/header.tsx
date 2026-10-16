@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useState } from "react";
 import Logo from "../logo";
+import { ActionLink } from "./action-link";
 
 const banner = {
   enabled: true,
@@ -29,12 +30,14 @@ export default function Header() {
         <div className="bg-gold-300 py-3 text-center">
           <p className="text-sm text-maroon-900">
             {banner.message}
-            <a
+            <ActionLink
               href={banner.cta.url}
-              className="ml-2 font-medium hover:underline"
+              variant="inline"
+              className="ml-2 text-sm font-medium"
+              external
             >
               {banner.cta.text}
-            </a>
+            </ActionLink>
           </p>
         </div>
       )}
@@ -59,12 +62,9 @@ export default function Header() {
             </nav>
 
             <div className="hidden md:block">
-              <a
-                href={donationUrl}
-                className="inline-flex rounded-full bg-maroon-500 px-6 py-2 text-sm font-bold text-white transition hover:bg-maroon-700 focus:outline-none focus:ring-2 focus:ring-gold-500 focus:ring-offset-2"
-              >
+              <ActionLink href={donationUrl} external>
                 Donate
-              </a>
+              </ActionLink>
             </div>
 
             <button
@@ -108,13 +108,14 @@ export default function Header() {
                     {link.label}
                   </Link>
                 ))}
-                <a
+                <ActionLink
                   href={donationUrl}
                   onClick={() => setMobileMenuOpen(false)}
-                  className="rounded-lg bg-maroon-500 px-4 py-2.5 text-center text-sm font-bold text-white transition hover:bg-maroon-700"
+                  className="w-full justify-center rounded-lg px-4 py-2.5"
+                  external
                 >
                   Donate
-                </a>
+                </ActionLink>
               </div>
             </nav>
           )}

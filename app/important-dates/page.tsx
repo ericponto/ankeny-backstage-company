@@ -1,5 +1,6 @@
-import Link from "next/link";
 import PageHero from "../_components/page-hero";
+import { ActionLink } from "../_components/action-link";
+import { SurfaceCard } from "../_components/surface-card";
 
 const events = [
   {
@@ -109,7 +110,7 @@ export default function ImportantDatesPage() {
       {/* Event list */}
       <section
         id="upcoming-events"
-        className="mx-auto max-w-6xl px-6 py-16 sm:px-8 sm:py-20"
+        className="px-6 py-16 bg-sand-100 sm:px-8 sm:py-20"
       >
         <div className="mb-10 max-w-2xl">
           <p className="text-sm font-bold uppercase tracking-[0.2em] text-gold-700">
@@ -124,15 +125,12 @@ export default function ImportantDatesPage() {
           </p>
         </div>
 
-        <div className="grid gap-6 lg:grid-cols-2">
+        <div className="mx-auto max-w-6xl grid gap-6 lg:grid-cols-2">
           {events.map((event) => (
-            <article
+            <SurfaceCard
               key={event.id}
-              className={`rounded-2xl border relative ${
-                event.featured
-                  ? "border-gold-400 shadow-md shadow-gold-900/5"
-                  : "border-stone-200"
-              } bg-white`}
+              tone={event.featured ? "highlight" : "default"}
+              className="relative"
             >
               {event.featured && (
                 <div className="absolute -top-4 left-4 rounded-md bg-gold-200 border border-gold-400 px-4 py-2 text-xs font-bold uppercase tracking-[0.18em] text-maroon-950">
@@ -159,16 +157,13 @@ export default function ImportantDatesPage() {
 
                 {event.cta && (
                   <div className="mt-6">
-                    <a
-                      href={event.cta.url}
-                      className="inline-flex items-center  rounded-full bg-maroon-500 px-4 py-2 text-sm font-bold text-white transition hover:bg-maroon-700"
-                    >
+                    <ActionLink href={event.cta.url} external>
                       {event.cta.text}
-                    </a>
+                    </ActionLink>
                   </div>
                 )}
               </div>
-            </article>
+            </SurfaceCard>
           ))}
         </div>
 

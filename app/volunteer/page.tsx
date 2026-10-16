@@ -1,9 +1,12 @@
+import Image from "next/image";
 import {
   ForkKnifeIcon,
   HammerIcon,
   TicketIcon,
 } from "@phosphor-icons/react/ssr";
 import PageHero from "../_components/page-hero";
+import { SurfaceCard } from "../_components/surface-card";
+import { TextLink } from "../_components/text-link";
 
 const opportunities = [
   {
@@ -106,20 +109,26 @@ export default function VolunteerPage() {
           <div className="grid items-center gap-8 md:grid-cols-[1.1fr_1.4fr] md:gap-10 lg:gap-16">
             <div className="relative order-2 md:order-1">
               <div className="grid grid-cols-2 gap-4">
-                <img
+                <Image
                   src="/all-state.jpg"
                   alt="Student receiving an award at the All-State competition"
+                  width={900}
+                  height={1200}
                   className="relative h-70 w-full rounded-[1.75rem] object-cover shadow-lg sm:h-75 lg:h-95"
                 />
                 <div className="flex flex-col gap-4 pt-8">
-                  <img
+                  <Image
                     src="/speech-backstage.jpg"
                     alt="Students getting ready for a performance"
+                    width={800}
+                    height={900}
                     className="h-42.5 w-full rounded-3xl object-cover shadow-md lg:h-47.5"
                   />
-                  <img
+                  <Image
                     src="/speech-preview.jpg"
                     alt="Students posing for a photo at the preview night"
+                    width={800}
+                    height={900}
                     className="h-42.5 w-full rounded-3xl object-cover shadow-md"
                   />
                 </div>
@@ -162,33 +171,36 @@ export default function VolunteerPage() {
           </p>
 
           <div className="mt-8 grid gap-6 md:grid-cols-2">
-            <div className="flex flex-col rounded-2xl border border-gold-500/30 bg-white/5 p-6">
+            <SurfaceCard tone="dark" className="flex flex-col p-6">
               <h3 className="text-xl font-semibold text-white">Contact us</h3>
-              <p className="flex-1 mt-4 leading-7 text-stone-200">
+              <p className="mt-4 flex-1 leading-7 text-stone-200">
                 Reach out to the ABC team to learn more about volunteer
                 opportunities and how to get involved.
               </p>
-              <a
+              <TextLink
                 href="mailto:admin@ankenybackstageco.org"
-                className="font-semibold mt-5 inline-flex items-center text-gold-200 hover:underline decoration-gold-300 underline-offset-4 transition hover:text-gold-100"
+                className="mt-5 inline-flex items-center font-semibold decoration-gold-300"
+                tone="gold"
               >
                 admin@ankenybackstageco.org
-              </a>
-            </div>
-            <div className="flex flex-col rounded-2xl border border-gold-500/30 bg-white/5 p-6">
+              </TextLink>
+            </SurfaceCard>
+            <SurfaceCard tone="dark" className="flex flex-col p-6">
               <h3 className="text-xl font-semibold text-white">Register</h3>
-              <p className="flex-1 mt-4 leading-7 text-stone-200">
+              <p className="mt-4 flex-1 leading-7 text-stone-200">
                 Complete the registration process through the Ankeny Community
                 School District&apos;s Volunteer Portal to be eligible to
                 volunteer.
               </p>
-              <a
+              <TextLink
                 href="https://app.betterimpact.com/PublicEnterprise/48bb9455-72f6-4445-a4bd-db232e49183e"
-                className="font-semibold mt-5 inline-flex items-center text-gold-200 hover:underline decoration-gold-300 underline-offset-4 transition hover:text-gold-100"
+                className="mt-5 inline-flex items-center font-semibold decoration-gold-300"
+                external
+                tone="gold"
               >
                 Register for Volunteer Opportunities
-              </a>
-            </div>
+              </TextLink>
+            </SurfaceCard>
           </div>
         </div>
       </section>

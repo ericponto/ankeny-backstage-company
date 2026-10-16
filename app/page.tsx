@@ -1,10 +1,13 @@
-import Link from "next/link";
+import Image from "next/image";
 import {
   FacebookLogoIcon,
   InstagramLogoIcon,
   MaskHappyIcon,
   MaskSadIcon,
 } from "@phosphor-icons/react/ssr";
+import { ActionLink } from "./_components/action-link";
+import { SurfaceCard } from "./_components/surface-card";
+import { TextLink } from "./_components/text-link";
 
 const photos = {
   hero: "/cmiyc-hero.jpg",
@@ -21,10 +24,11 @@ export default function Home() {
         id="home"
         className="relative isolate min-h-[540px] overflow-hidden sm:min-h-[650px] bg-black"
       >
-        <img
+        <Image
           src={photos.hero}
           alt="A theater stage ready for a performance"
-          className="absolute inset-0 -z-20 w-full object-cover top-[-12vw]"
+          fill
+          className="absolute inset-0 -z-20 w-full object-cover !top-[-12vw]"
         />
         <div className="absolute inset-0 -z-10 bg-gradient-to-r from-black-900/90 via-black-800/75 to-black-800/20" />
 
@@ -42,9 +46,12 @@ export default function Home() {
             </p>
 
             <div className="mt-9 flex justify-center">
-              <a
+              <ActionLink
                 href="https://givebutter.com/ABC-donations-lmg6wc"
-                className="inline-flex w-fit items-center justify-center gap-3 rounded-full border border-white/30 px-10 py-3 text-2xl font-light uppercase tracking-[0.1em] text-white transition hover:border-white hover:text-gold-300 focus:outline-none focus:ring-2 focus:ring-gold-500 focus:ring-offset-2"
+                variant="ghost"
+                size="lg"
+                className="w-fit gap-3 px-10 font-light tracking-[0.1em]"
+                external
               >
                 <span
                   className="block h-px w-6 bg-gold-300"
@@ -55,7 +62,7 @@ export default function Home() {
                   className="block h-px w-6 bg-gold-300 -ml-2"
                   aria-hidden="true"
                 />
-              </a>
+              </ActionLink>
             </div>
           </div>
         </div>
@@ -86,9 +93,11 @@ export default function Home() {
           </div>
 
           <div className="relative">
-            <img
+            <Image
               src={photos.production}
               alt="Students getting ready in the green room."
+              width={1200}
+              height={800}
               className="relative aspect-2/1 sm:aspect-4/3 w-full rounded-3xl object-cover shadow-xl"
             />
           </div>
@@ -111,8 +120,8 @@ export default function Home() {
             </h2>
           </div>
 
-          <div className="mt-14 grid gap-10 sm:gap-6 md:grid-cols-2">
-            <article className="group relative rounded-3xl border border-[#e4d6c3] bg-ivory-50 p-7 shadow-sm sm:p-8">
+          <div className="mt-14 grid gap-10 md:gap-6 md:grid-cols-2">
+            <SurfaceCard className="group relative p-7 sm:p-8">
               <div className="absolute -top-7 left-7 flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-gold-200 text-gold-800 shadow-md">
                 <MaskSadIcon size={30} weight="fill" aria-hidden="true" />
               </div>
@@ -127,14 +136,12 @@ export default function Home() {
                 Individual competitions.
               </p>
               <div className="mt-6 flex items-center justify-between gap-3">
-                <a
-                  className="inline-flex items-center gap-2 font-bold text-maroon-500 hover:underline underline-offset-8 transition hover:text-maroon-700"
+                <TextLink
                   href="https://sites.google.com/ankenyschools.org/ahs-speech/home"
-                  target="_blank"
-                  rel="noreferrer"
+                  external
                 >
                   Learn more
-                </a>
+                </TextLink>
                 <div className="ml-auto flex items-center gap-3">
                   <a
                     className="inline-flex items-center gap-2 rounded-full p-2 text-sm font-semibold text-maroon-500 transition hover:border-maroon-700 hover:text-maroon-800"
@@ -164,8 +171,8 @@ export default function Home() {
                   </a>
                 </div>
               </div>
-            </article>
-            <article className="group relative rounded-3xl border border-[#e4d6c3] bg-ivory-50 p-7 shadow-sm sm:p-8">
+            </SurfaceCard>
+            <SurfaceCard className="group relative p-7 sm:p-8">
               <div className="absolute -top-7 left-7 flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-maroon-100 text-maroon-600 shadow-md">
                 <MaskHappyIcon size={30} weight="fill" aria-hidden="true" />
               </div>
@@ -180,14 +187,9 @@ export default function Home() {
                 a team, and bring stories to life.
               </p>
               <div className="mt-6 flex items-center justify-between gap-3">
-                <a
-                  className="inline-flex items-center gap-2 font-bold text-maroon-500 hover:underline underline-offset-8 transition hover:text-maroon-700"
-                  href="https://ankenydrama.ludus.com/"
-                  target="_blank"
-                  rel="noreferrer"
-                >
+                <TextLink href="https://ankenydrama.ludus.com/" external>
                   Find tickets
-                </a>
+                </TextLink>
                 <div className="ml-auto flex items-center gap-3">
                   <a
                     className="inline-flex items-center gap-2 rounded-full p-2 text-sm font-semibold text-maroon-500 transition hover:border-maroon-700 hover:text-maroon-800"
@@ -204,9 +206,16 @@ export default function Home() {
                   </a>
                 </div>
               </div>
-            </article>
+            </SurfaceCard>
           </div>
         </div>
+        <TextLink
+          href="/important-dates"
+          className="absolute bottom-10 right-16"
+          showArrow
+        >
+          See upcoming dates
+        </TextLink>
       </section>
 
       {/* Behind the scenes */}
@@ -217,20 +226,26 @@ export default function Home() {
               <div className="w-1 h-full bg-maroon-500 rounded-full absolute left-[30%] top-[-12%] rotate-33"></div>
               <div className="w-1 h-full bg-maroon-500 rounded-full absolute left-[calc(30%+24px)] top-[calc(-12%-8px)] rotate-33"></div>
               <div className="w-1 h-full bg-maroon-500 rounded-full absolute left-[calc(30%+48px)] top-[calc(-12%-16px)] rotate-33"></div>
-              <img
+              <Image
                 src="/painting.jpg"
                 alt="Student painting a set piece"
+                width={900}
+                height={1200}
                 className="relative aspect-3/4 w-full rounded-2xl object-cover shadow-md"
               />
               <div className="flex flex-col gap-4 pt-10">
-                <img
+                <Image
                   src={photos.team}
                   alt="Students working in the sound and lighting booth"
+                  width={1200}
+                  height={900}
                   className="relative aspect-square w-full rounded-2xl object-cover shadow-md"
                 />
-                <img
+                <Image
                   src="/anything-goes-build.jpg"
                   alt="Parent volunteers building a set piece for the musical Anything Goes"
+                  width={900}
+                  height={600}
                   className="relative aspect-3/2 w-full rounded-2xl object-cover shadow-md"
                 />
               </div>
@@ -252,12 +267,13 @@ export default function Home() {
                 meals during tech week, there is a long list of ways to get
                 involved.
               </p>
-              <Link
+              <TextLink
                 href="/volunteer"
-                className="mt-6 inline-flex items-center gap-2 font-bold text-maroon-500 hover:underline  underline-offset-8 transition hover:text-maroon-700"
+                className="mt-6 inline-flex"
+                showArrow
               >
                 Learn more about volunteering
-              </Link>
+              </TextLink>
             </div>
           </div>
         </div>
@@ -279,12 +295,13 @@ export default function Home() {
           <p className="mx-auto mt-6 max-w-xl text-lg leading-8 text-white/85">
             Send us an email to get involved or learn more.
           </p>
-          <a
-            className="mt-2 inline-block font-medium text-gold-200 hover:underline decoration-gold-300 decoration-2 underline-offset-8 transition hover:text-gold-300"
+          <TextLink
             href="mailto:admin@ankenybackstageco.org?subject=Ankeny%20Backstage%20Company"
+            className="mt-2 inline-block font-medium decoration-gold-300 decoration-2"
+            tone="gold"
           >
             admin@ankenybackstageco.org
-          </a>
+          </TextLink>
         </div>
       </section>
     </main>

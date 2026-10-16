@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { GoogleAnalytics } from "@next/third-parties/google";
 import "./globals.css";
 
 import { Prompt, DM_Serif_Display } from "next/font/google";
@@ -35,6 +36,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <div className="flex-1">{children}</div>
         <Footer />
       </body>
+      <GoogleAnalytics gaId="G-BSKF5PJ6HG" />
     </html>
   );
 }
