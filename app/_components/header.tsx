@@ -6,7 +6,7 @@ import Logo from "../logo";
 import { ActionLink } from "./action-link";
 
 const banner = {
-  enabled: true,
+  enabled: false,
   message: "Tickets for Clue are on sale now!",
   cta: {
     text: "Get tickets",

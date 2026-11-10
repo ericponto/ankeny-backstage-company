@@ -2,18 +2,35 @@ import PageHero from "../_components/page-hero";
 import { ActionLink } from "../_components/action-link";
 import { SurfaceCard } from "../_components/surface-card";
 
-const events = [
+interface Event {
+  id: string;
+  category: string;
+  title: string;
+  description: string;
+  featured?: boolean;
+  cta?: {
+    text: string;
+    url: string;
+  };
+  dates: {
+    label: string;
+    date: string;
+    detail?: React.ReactNode;
+  }[];
+}
+
+const events: Event[] = [
   {
     id: "clue",
     category: "DRAMA",
     title: "Fall Play: Clue",
     description:
       "A mansion, a mystery, and a cast of suspicious characters. Come see how it all unfolds.",
-    featured: true,
-    cta: {
-      text: "Tickets on sale now",
-      url: "https://ankenydrama.ludus.com/",
-    },
+    featured: false,
+    // cta: {
+    //   text: "Tickets on sale now",
+    //   url: "https://ankenydrama.ludus.com/",
+    // },
     dates: [
       { label: "Tech week", date: "Nov 2–5, 2026" },
       {
