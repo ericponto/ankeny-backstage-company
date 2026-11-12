@@ -143,7 +143,7 @@ export default function VolunteerPage() {
                 Large Group Speech
               </h2>
               <p className="mt-3 font-semibold text-maroon-800">
-                Saturday, January 23, 2027
+                Saturday, January 24, 2027
               </p>
               <p className="mt-5 text-lg font-semibold leading-7 text-stone-800">
                 We&apos;re hosting the district contest this year

@@ -52,12 +52,18 @@ const events: Event[] = [
     id: "large-group-speech",
     category: "SPEECH",
     title: "Large Group Speech",
+    featured: true,
     description:
       "Students work together to perform, create, and compete in a variety of speech categories.",
     dates: [
       {
+        label: "Friends & Family",
+        date: "Jan 20, 2027",
+        detail: "Preview performances including the one-act play",
+      },
+      {
         label: "District",
-        date: "Jan 23, 2027",
+        date: "Jan 24, 2027",
         detail: "Hosted by Ankeny High School",
       },
       { label: "State", date: "Feb 6, 2027" },
